@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jake Stewart">
+    <meta name="description" content="A Global Weather App using the OpenWeather API">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <title>Weather Forecast - A Weather API</title>
+</head>
+    <header>
+        <img class="logo" src="/resources/imgs/logo.png" alt="What's Up Logo">
+        <h1 class="logo-motto">What's Up™ - Getting you the latest weather</h1>
+    </header>
+    <body>
+        <div class="bg-img"></div>
+        <main>
+            <div class="container Container__shift">
+                <div class="search-wrap search-wrap-1">
+                    <div class="search-box">
+                        <input type="text" class="input input__value" placeholder="Search for a place..." required="true" onkeyup="lettersOnly(this)">
+                        <div class="btn btn-common">
+                            <i class="fas fa-search button"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather__data hidden">
+                    <div class="location-info">
+                        <h2>Latest weather in <span data-current-location></span></h2>
+                            <h3>
+                                <span data-current-date></span>
+                            </h3>
+                            <p data-current-time></p>
+                    </div>
+            
+                    <div class="temperature-info">
+                        <h2>Temperature</h2>
+                        <p>Highs: <span data-current-temp-high></span>°<span data-temp-unit></span></p>
+                        <p>Lows: <span data-current-temp-low></span>°<span data-temp-unit></span></p>
+                    </div>
+            
+                    <div class="wind-info">
+                        <h2 class="section-title">Wind</h2>
+                        <p class="reading"><span data-wind-speed>0 </span><span data-temp-speed>M/S</p>
+                        <div class="wind__direction">
+                        <p class="sr-only" data-wind-direction-text></p>
+                        <div class="wind__arrow" data-wind-direction-arrow></div>
+                        </div>
+                    </div>
+
+                    <div class="unit">
+                        <label for="cel">°C</label>
+                        <input type="radio" id="cel" name="unit" checked />
+                        <button class="unit__toggle" data-unit-toggle></button>
+                        <label for="fah">°F</label>
+                        <input type="radio" id="fah" name="unit" />
+                    </div>
+
+                    <div class="more-info">
+                        <br>
+                        <h2>More Info</h2>
+                        <p> This weather app was brought to you by Open Weather, a simple to use weather tracking service. <a href="https://openweathermap.org/">Click here</a> to find out more.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- SCRIPTS -->
+        <script src="resources/scripts/index.js"></script>
+    </body>
+</html>
